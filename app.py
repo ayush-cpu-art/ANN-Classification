@@ -6,8 +6,7 @@ import pandas as pd
 import pickle
 
 # load the trained model
-model = tf.keras.models.load_model('my_model.keras',compile=False)
-
+model = tf.keras.models.load_model("my_model.h5",compile=False)
 # Load the enncoder and scaler
 with open('onehot_encoder_geo.pkl','rb') as file:
     one_geo_encoder=pickle.load(file)
