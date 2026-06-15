@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 
 # load the trained model
-model = tf.keras.models.load_model("clean_model.h5",compile=False)model = tf.keras.Sequential([
+model = tf.keras.Sequential([
     tf.keras.layers.Input(shape=(12,)),
     tf.keras.layers.Dense(64, activation='relu'),
     tf.keras.layers.Dense(32, activation='relu'),
