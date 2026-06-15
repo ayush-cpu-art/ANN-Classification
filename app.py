@@ -6,7 +6,14 @@ import pandas as pd
 import pickle
 
 # load the trained model
-model = tf.keras.models.load_model("clean_model.h5",compile=False)
+model = tf.keras.models.load_model("clean_model.h5",compile=False)model = tf.keras.Sequential([
+    tf.keras.layers.Input(shape=(12,)),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(32, activation='relu'),
+    tf.keras.layers.Dense(1, activation='sigmoid')
+])
+
+model.load_weights("model.weights.h5")
 # Load the enncoder and scaler
 with open('onehot_encoder_geo.pkl','rb') as file:
     one_geo_encoder=pickle.load(file)
